@@ -1,0 +1,9 @@
+{
+	"title": "$:/plugins/danielo/tagSearch",
+	"description": "tag tag lets you search using tags in a visual way",
+	"author": "Danielo Rodrigez",
+	"version": "1.0.0",
+	"core-version": ">=5.1.0",
+	"source": "https://github.com/danielo515/TW5-TagSearch",
+	"plugin-type": "plugin"
+}

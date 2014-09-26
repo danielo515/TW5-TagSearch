@@ -1,0 +1,45 @@
+created: 20140414232747021
+modified: 20140415014203477
+module-type: macro
+tags: macros
+title: $:/plugins/danielo/tagSearch/SearchFilter
+type: application/javascript
+
+/*\
+title: $:/macros/danielo/SearchFilter.js
+type: application/javascript
+module-type: macro
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+/*
+Information about this macro
+This returns an empty search string if tiddlerName is empty. This avoids all tiddlers as result when using an empty as search string. 
+*/
+
+exports.name = "search-filter";
+
+exports.params = [
+	{ name: "tiddlerName" }
+];
+
+/*
+Run the macro
+*/
+exports.run = function(tiddlerName) {
+   var tiddler=$tw.wiki.getTiddler(tiddlerName);
+    var result="search{}"; //by default,empty search
+    if(tiddler && tiddler.fields.text.trim().length>0 || tiddler.fields.tags)
+    {
+            result="search{"+tiddlerName+"}";
+    }
+
+return result;
+}
+
+})();
