@@ -1,10 +1,10 @@
 @echo off
-rem develop.cmd <port>
+rem develop.cmd [<username>] [<password>]
 rem
 rem Serves development TW5 over HTTP at localhost:8080
 rem
 tiddlywiki.cmd ^
+	editions\develop ^
 	--verbose ^
-	--server 8080 $:/core/save/all text/plain text/html 
-rem	|| exit 1
-pause
+	--server 8080 $:/core/save/all text/plain text/html %1 %2
+
