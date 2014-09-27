@@ -1,12 +1,13 @@
 created: 20140415013756833
 creator: Danielo Rodriguez
-dependencies: 
+dependencies:
 description: A search box that allows you to filter by tag
+list: TagsSearch-Plugin
 modified: 20140415014050144
 modifier: Danielo Rodriguez
 plugin-type: plugin
 title: $:/plugins/danielo/tagSearch
 type: application/json
-version: 1.0.0
+
 
 {"tiddlers": {}}
