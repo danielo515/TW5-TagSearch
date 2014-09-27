@@ -141,7 +141,7 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
-<li>TagsSearch-Plugin</li>
+<li>readme</li>
 
 </ul>
 </p>
@@ -4690,7 +4690,7 @@ Error message and password prompt
 <div title="$:/isEncrypted" revision="0" bag="default">
 <pre>no</pre>
 </div>
-<div author="Danielo Rodrigez" core-version="&gt;=5.1.0" dependents="" description="tag tag lets you search using tags in a visual way" plugin-type="plugin" source="https://github.com/danielo515/TW5-TagSearch" title="$:/plugins/danielo/tagSearch" type="application/json" version="1.0.1" revision="0" bag="default">
+<div author="Danielo Rodrigez" core-version="&gt;=5.1.0" dependents="" description="A search box that allows you to filter by tag in a visual way" list="readme" plugin-type="plugin" source="https://github.com/danielo515/TW5-TagSearch" title="$:/plugins/danielo/tagSearch" type="application/json" version="1.0.2" revision="0" bag="default">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/danielo/tagSearch/SearchFilter&quot;: {
@@ -4701,6 +4701,17 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/danielo/tagSearch/SearchFilter&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/macros/danielo/SearchFilter.js\ntype: application/javascript\nmodule-type: macro\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nInformation about this macro\nThis returns an empty search string if tiddlerName is empty. This avoids all tiddlers as result when using an empty as search string. \n*/\n\nexports.name = \&quot;search-filter\&quot;;\n\nexports.params = [\n\t{ name: \&quot;tiddlerName\&quot; }\n];\n\n/*\nRun the macro\n*/\nexports.run = function(tiddlerName) {\n   var tiddler=$tw.wiki.getTiddler(tiddlerName);\n    var result=\&quot;search{}\&quot;; //by default,empty search\n    if(tiddler &amp;&amp; tiddler.fields.text.trim().length&gt;0 || tiddler.fields.tags)\n    {\n            result=\&quot;search{\&quot;+tiddlerName+\&quot;}\&quot;;\n    }\n\nreturn result;\n}\n\n})();&quot;
+        },
+        &quot;TagsSearch-Plugin&quot;: {
+            &quot;created&quot;: &quot;20140415015958822&quot;,
+            &quot;creator&quot;: &quot;Danielo Rodriguez&quot;,
+            &quot;description&quot;: &quot;a plugin to refine a search using tags&quot;,
+            &quot;modified&quot;: &quot;20140415020923195&quot;,
+            &quot;modifier&quot;: &quot;Danielo Rodriguez&quot;,
+            &quot;tags&quot;: &quot;index plugins&quot;,
+            &quot;title&quot;: &quot;TagsSearch-Plugin&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;This plugin allows you to refine searches using tags. It's possible to search without any tag and the opposite, using just tags as filter.\n\n!!How to install\nJust grab the following link to your tiddlywiki window:\n\n[[$:/plugins/danielo/tagSearch]]\n\n!! How to use\nAfter installing it you will have a new tab in \&quot;Advanced search\&quot; tiddler. You can also transclude this search whatever you want just transcluding it\n\n```\n{{TagsSearch}}\n```\n\n!! Live demo\nI think the better way to make you see how this works is allowing you playing with it. Just try changing the defined search.\n\n{{TagsSearch}}&quot;
         },
         &quot;TagsSearch&quot;: {
             &quot;created&quot;: &quot;20140414160743883&quot;,
@@ -4729,6 +4740,13 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/danielo/tagSearch/macros/extractTagsAsFilter.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;macro&quot;
+        },
+        &quot;$:/plugins/danielo/tagSearch/readme&quot;: {
+            &quot;created&quot;: &quot;20140927204347971&quot;,
+            &quot;modified&quot;: &quot;20140927204353722&quot;,
+            &quot;title&quot;: &quot;$:/plugins/danielo/tagSearch/readme&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;This plugin allows you to refine searches using tags. It's possible to search without any tag and the opposite, using just tags as filter.\n\n!! How to use\nAfter installing it you will have a new tab in \&quot;Advanced search\&quot; tiddler. You can also transclude this search whatever you want just transcluding it\n\n```\n{{TagsSearch}}\n```&quot;
         }
     }
 }</pre>
@@ -5008,25 +5026,15 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20140415015958822" creator="Danielo Rodriguez" description="a plugin to refine a search using tags" modified="20140415020923195" modifier="Danielo Rodriguez" tags="index plugins" title="TagsSearch-Plugin" type="text/vnd.tiddlywiki" revision="0" bag="default">
+<div created="20140927204347971" modified="20140927204353722" title="readme" type="text/vnd.tiddlywiki" revision="0" bag="default">
 <pre>This plugin allows you to refine searches using tags. It's possible to search without any tag and the opposite, using just tags as filter.
-
-!!How to install
-Just grab the following link to your tiddlywiki window:
-
-[[$:/plugins/danielo/tagSearch]]
 
 !! How to use
 After installing it you will have a new tab in &quot;Advanced search&quot; tiddler. You can also transclude this search whatever you want just transcluding it
 
 ```
 {{TagsSearch}}
-```
-
-!! Live demo
-I think the better way to make you see how this works is allowing you playing with it. Just try changing the defined search.
-
-{{TagsSearch}}</pre>
+```</pre>
 </div>
 
 </div>
