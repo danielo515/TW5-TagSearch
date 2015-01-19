@@ -29,7 +29,7 @@ exports.params = [
 Run the macro
 */
 exports.run = function(tiddlerName) {
-   var tiddler=$tw.wiki.getTiddler(tiddlerName);
+   var tiddler=$tw.wiki.getTiddler(tiddlerName || this.getVariable("currentTiddler"));
     var result="";
     if(tiddler && tiddler.fields.tags)
     {
